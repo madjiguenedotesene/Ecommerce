@@ -1,0 +1,11 @@
+# Environnement virtuel
+.venv/
+
+# Fichiers cache Python
+__pycache__/
+
+# Base de données locale (Ne jamais mettre sur GitHub!)
+database.db
+
+# Fichiers macOS
+.DS_Store
