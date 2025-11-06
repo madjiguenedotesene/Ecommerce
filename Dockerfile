@@ -11,5 +11,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Étape 4 : Copier du code
 COPY . .
 
-# Étape 5 : La commande pour lancer Gunicorn
-CMD ["gunicorn", "-w", "4", "-k", "uvicorn.workers.UvicornWorker", "main:app", "--host", "0.0.0.0", "--port", "$PORT"]
+CMD ["gunicorn", "-w", "4", "-k", "uvicorn.workers.UvicornWorker", "--host", "0.0.0.0", "--port", "$PORT", "main:app"]
