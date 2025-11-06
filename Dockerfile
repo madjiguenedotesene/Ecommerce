@@ -13,4 +13,4 @@ COPY . .
 
 # Étape 5 : La commande pour lancer le serveur en production (CORRIGÉE)
 # Notez bien : "--host", "0.0.0.0", "--port", "$PORT"
-CMD ["gunicorn", "-w", "4", "-k", "uvicorn.workers.UvicornWorker", "--host", "0.0.0.0", "--port", "$PORT", "main:app"]
+ CMD ["sh", "-c", "gunicorn -w 4 -k uvicorn.workers.UvicornWorker -b 0.0.0.0:${PORT:-8000} main:app"]
